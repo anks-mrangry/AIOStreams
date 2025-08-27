@@ -1,10 +1,14 @@
 services:
   aiostreams:
-    build: https://github.com/anks-mrangry/AIOStreams.git#main
+    build:
+      context: https://github.com/anks-mrangry/AIOStreams.git#main
+      dockerfile: Dockerfile  # optional if your Dockerfile is named differently or in subfolder
+      args:
+        # Optional: pass any build arguments if needed
     container_name: aiostreams
     restart: unless-stopped
     ports:
-      - 3000:3000
+      - "3000:3000"
     env_file:
       - .env
     volumes:
