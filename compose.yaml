@@ -1,6 +1,6 @@
 services:
   aiostreams:
-    image: ghcr.io/viren070/aiostreams:latest
+    build: https://github.com/anks-mrangry/AIOStreams.git#main
     container_name: aiostreams
     restart: unless-stopped
     ports:
